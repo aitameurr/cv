@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Abdeljalil Ait Ameur</title>
+    <style>
+        /* Reset et Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        :root {
+            --primary: #2A2F4F;
+            --secondary: #917FB3;
+            --accent: #E5BEEC;
+            --text: #333;
+        }
+
+        body {
+            background: #f8f9fa;
+            line-height: 1.6;
+            color: var(--text);
+        }
+
+        /* En-tête */
+        .hero {
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Conteneur principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Cartes */
+        .card {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            transform: translateY(0);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+
+        .section-title {
+            color: var(--primary);
+            border-left: 4px solid var(--secondary);
+            padding-left: 1rem;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+            margin-left: 1rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background: var(--secondary);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background: var(--accent);
+            border-radius: 10px;
+            opacity: 0;
+            transform: translateX(-20px);
+            animation: fadeIn 0.6s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3.3rem;
+            top: 1.5rem;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        /* Compétences */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            background: rgba(233, 233, 233, 0.2);
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            margin: 0.8rem 0;
+            padding: 0.8rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <h1>Abdeljalil Ait Ameur</h1>
+        <p>Technicien Spécialisé en Gros Œuvre</p>
+        <p style="margin-top: 1rem;">📍 Ait Sedrate Sahl El Gharbia, Maroc</p>
+    </section>
+
+    <main class="container">
+        <!-- Expérience -->
+        <div class="card">
+            <h2 class="section-title">Expérience Professionnelle</h2>
+            <div class="timeline">
+                <!-- Stages -->
+                <div class="timeline-item" style="animation-delay: 0.2s;">
+                    <h3>ORMVA-TF - Stage</h3>
+                    <p class="date">Janvier 2023</p>
+                    <ul>
+                        <li>Suivi de chantier agricole</li>
+                        <li>Coordination inter-équipes</li>
+                        <li>Application des normes de sécurité</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item" style="animation-delay: 0.4s;">
+                    <h3>HOUJLAN SARL - Stage</h3>
+                    <p class="date">Mars 2023</p>
+                    <ul>
+                        <li>Gestion des approvisionnements</li>
+                        <li>Contrôle qualité des matériaux</li>
+                        <li>Résolution de problèmes techniques</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item" style="animation-delay: 0.6s;">
+                    <h3>ÉQUIPEMENT - Stage</h3>
+                    <p class="date">Octobre-Décembre 2023</p>
+                    <ul>
+                        <li>Calculs de métré précis</li>
+                        <li>Modélisation AutoCAD</li>
+                        <li>Optimisation des coûts</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item" style="animation-delay: 0.8s;">
+                    <h3>Bureau d'Étude IGREG - Stage</h3>
+                    <p class="date">Février 2024</p>
+                    <ul>
+                        <li>Calculs BAEL</li>
+                        <li>Conception de plans techniques</li>
+                        <li>Analyse des charges structurelles</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item" style="animation-delay: 1s;">
+                    <h3>Commune Boumalne Dades - Stage</h3>
+                    <p class="date">Mai 2024</p>
+                    <ul>
+                        <li>Gestion de projets urbains</li>
+                        <li>Coordination municipale</li>
+                        <li>Suivi administratif</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Compétences -->
+        <div class="card">
+            <h2 class="section-title">Compétences Techniques</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>🛠️ Logiciels</h3>
+                    <div class="skill-item">AutoCAD (Expert)</div>
+                    <div class="skill-item">Primavera P6</div>
+                    <div class="skill-item">MS Project</div>
+                    <div class="skill-item">Excel</div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>📐 Techniques</h3>
+                    <div class="skill-item">Calculs BAEL</div>
+                    <div class="skill-item">Métré</div>
+                    <div class="skill-item">Mécanique des sols</div>
+                    <div class="skill-item">Planification de chantier</div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>🌍 Langues</h3>
+                    <div class="skill-item">Tamazight (Maternelle)</div>
+                    <div class="skill-item">Arabe (Courant)</div>
+                    <div class="skill-item">Français (Intermédiaire)</div>
+                    <div class="skill-item">Anglais (Intermédiaire)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formation -->
+        <div class="card">
+            <h2 class="section-title">Formation</h2>
+            <div class="timeline">
+                <div class="timeline-item" style="animation-delay: 0.2s;">
+                    <h3>Technicien Spécialisé en Gros Œuvre</h3>
+                    <p class="date">ISBTP Errachidia | 2024</p>
+                    <ul>
+                        <li>Étude de marché et prix</li>
+                        <li>Mécanique des sols</li>
+                        <li>Organisation de chantier</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item" style="animation-delay: 0.4s;">
+                    <h3>Baccalauréat SVT</h3>
+                    <p class="date">Lycée Tarik Ibn Ziad | 2019</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="card">
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <a href="mailto:to.aitameurr@gmail.com">to.aitameurr@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <a href="tel:+212690723242">+212 690 723 242</a>
+                </div>
+                <div class="contact-item">
+                    <span>🚗</span>
+                    <p>Permis B</p>
+                </div>
+                <div class="contact-item">
+                    <span>📜</span>
+                    <p>Certificat OPQUIBAT (En cours)</p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
